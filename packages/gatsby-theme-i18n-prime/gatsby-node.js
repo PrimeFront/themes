@@ -15,7 +15,7 @@ function writeFile(filePath, data, reporter) {
     mkdirp(path.dirname(filePath), (err) => {
       if (err) {
         reporter.panicOnBuild(
-          `[gatsby-theme-i18n]: Failing to create the directory for the default config file\n\n${err}`
+          `[gatsby-theme-i18n-prime]: Failing to create the directory for the default config file\n\n${err}`
         )
         return
       }
@@ -24,13 +24,13 @@ function writeFile(filePath, data, reporter) {
       fs.writeFile(filePath, data, (err) => {
         if (err) {
           reporter.panicOnBuild(
-            `[gatsby-theme-i18n]: Failing to create a default config file\n\n${err}`
+            `[gatsby-theme-i18n-prime]: Failing to create a default config file\n\n${err}`
           )
           return
         }
 
         reporter.info(
-          `[gatsby-theme-i18n]: Created a default config file at ${filePath}`
+          `[gatsby-theme-i18n-prime]: Created a default config file at ${filePath}`
         )
       })
     })
@@ -56,11 +56,11 @@ exports.onPreBootstrap = ({ reporter, store }, themeOptions) => {
   if (themeOptions.configPath) {
     if (!fs.existsSync(themeOptions.configPath)) {
       reporter.panicOnBuild(
-        `[gatsby-theme-i18n]: Couldn't find the file at ${themeOptions.configPath}`
+        `[gatsby-theme-i18n-prime]: Couldn't find the file at ${themeOptions.configPath}`
       )
     }
     reporter.info(
-      `[gatsby-theme-i18n]: Config file found at ${themeOptions.configPath}`
+      `[gatsby-theme-i18n-prime]: Config file found at ${themeOptions.configPath}`
     )
   } else {
     writeFile(defaultConfigPath, data, reporter)
@@ -105,14 +105,14 @@ exports.sourceNodes = (
 
   createNode({
     ...configNode,
-    id: createNodeId(`gatsby-theme-i18n-config`),
+    id: createNodeId(`gatsby-theme-i18n-prime-config`),
     parent: null,
     children: [],
     internal: {
       type: `ThemeI18n`,
       contentDigest: createContentDigest(configNode),
       content: JSON.stringify(configNode),
-      description: `Options for gatsby-theme-i18n`,
+      description: `Options for gatsby-theme-i18n-prime`,
     },
   })
 }

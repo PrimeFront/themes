@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-themes",
+  "name": "gatsby-themes-prime",
   "version": "0.0.1",
   "scripts": {
     "lerna": "lerna",
@@ -15,8 +15,7 @@
     "ssat:gatsby-starter-theme:dev": "start-server-and-test gatsby-starter-theme:cy:dev http://localhost:8000 cy:open",
     "ssat:gatsby-starter-theme:serve": "start-server-and-test gatsby-starter-theme:serve http://localhost:9000 cy:run",
     "e2e:dev": "concurrently --kill-others 'yarn ssat:gatsby-starter-theme:dev'",
-    "e2e:ci": "yarn gatsby-starter-theme:cy:build && yarn ssat:gatsby-starter-theme:serve",
-    "prepare": "husky install"
+    "e2e:ci": "yarn gatsby-starter-theme:cy:build && yarn ssat:gatsby-starter-theme:serve"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -48,7 +47,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "gatsby-cypress": "^2.3.0",
-    "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "lint-staged": "^12.1.2",
     "prettier": "^2.5.0",

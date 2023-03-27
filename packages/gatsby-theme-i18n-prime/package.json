@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-i18n-prime",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "main": "index.js",
   "types": "index.d.ts",
   "author": "LekoArts <lekoarts@gmail.com>",
@@ -17,12 +17,15 @@
     "gatsby",
     "gatsby-plugin"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
-    "directory": "packages/gatsby-theme-i18n",
+    "directory": "packages/gatsby-theme-i18n-prime",
     "url": "https://github.com/PrimeFront/themes.git"
   },
-  "homepage": "https://github.com/PrimeFront/themes/tree/master/packages/gatsby-theme-i18n#readme",
+  "homepage": "https://github.com/PrimeFront/themes/tree/master/packages/gatsby-theme-i18n-prime#readme",
   "engines": {
     "node": ">=14.15.0"
   }
